@@ -10,7 +10,7 @@ const Cart = () => {
   return (
     <>
       <div className={styles.cart}>
-        <i class="fas fa-shopping-cart fa-2x"></i>
+        <i className="fas fa-shopping-cart fa-2x"></i>
         <div className={styles.quantity}>
           <p>{cart.length}</p>
         </div>

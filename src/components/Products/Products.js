@@ -4,8 +4,6 @@ import PropTypes from "prop-types"
 
 import styles from "./Products.module.css"
 
-const { uuid } = require("uuidv4")
-
 const Products = ({ results }) => {
   return (
     <section className={styles.products}>

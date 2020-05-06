@@ -54,6 +54,11 @@ const EbuyState = (props) => {
     dispatch({ type: "ADD_PRODUCT", payload: product })
   }
 
+  // Remove product from cart
+  const removeProductFromCart = (product) => {
+    dispatch({ type: "REMOVE_PRODUCT", payload: product })
+  }
+
   // Set Loading
   const setLoading = () => dispatch({ type: "SET_LOADING" })
 
@@ -71,6 +76,7 @@ const EbuyState = (props) => {
         setInput,
         searchProduct,
         addProductToCart,
+        removeProductFromCart,
       }}
     >
       {props.children}

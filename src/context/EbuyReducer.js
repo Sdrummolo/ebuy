@@ -28,7 +28,30 @@ export default (state, action) => {
     case "ADD_PRODUCT":
       return {
         ...state,
-        cart: [...state.cart, action.payload],
+        cart: state.cart.concat(
+          state.results.filter((product) => {
+            return product.itemId[0] === action.payload
+          })
+        ),
+        results: state.results.map((product) => {
+          if (product.itemId[0] === action.payload) {
+            product.isInCart = true
+            return product
+          } else return product
+        }),
+      }
+    case "REMOVE_PRODUCT":
+      return {
+        ...state,
+        cart: state.cart.filter((product) => {
+          return product.itemId[0] !== action.payload
+        }),
+        results: state.results.map((product) => {
+          if (product.itemId[0] === action.payload) {
+            product.isInCart = false
+            return product
+          } else return product
+        }),
       }
     default:
       return state
