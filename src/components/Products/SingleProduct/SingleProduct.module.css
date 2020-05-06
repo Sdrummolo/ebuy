@@ -1,6 +1,40 @@
 .singleProduct {
-  width: 230px;
-  height: 350px;
-  background: #000;
-  margin: 30px auto;
+  margin: 20px auto;
+  position: relative;
+  display: flex;
+  border: 1px solid rgb(212, 212, 212);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.img > img {
+  width: 150px;
+  border: 1px solid rgb(212, 212, 212);
+  padding: 1px;
+  margin-right: 10px;
+}
+
+.title {
+  margin-top: 5px;
+}
+
+.price {
+  color: var(--blue);
+}
+
+.addButton {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  padding: 10px;
+  border: none;
+  background: var(--main);
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.addButton:hover {
+  transform: scale(1.1);
 }

@@ -4,9 +4,7 @@ import EbuyContext from "./ebuyContext"
 
 const VERSION = "1.13.0"
 const SECURITY_APPNAME = "LuigiDiP-allbuy-PRD-bc545f399-176ef3d6"
-// ROBA DA METTERE IN STATE:
-// CURRENT ITEMS ADDED TO CART
-// LAST SEARCH RESULTS
+
 const EbuyState = (props) => {
   const initialState = {
     cart: [],
@@ -39,17 +37,21 @@ const EbuyState = (props) => {
         response.findItemsByKeywordsResponse[0].searchResult[0]["@count"] ===
         "0"
       ) {
-        dispatch({ type: "ERROR" })
-      } else {
-        dispatch({
-          type: "LOAD_PRODUCTS",
-          payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
-        })
+        return dispatch({ type: "ERROR" })
       }
+      dispatch({
+        type: "LOAD_PRODUCTS",
+        payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
+      })
     } catch (err) {
       console.log(err)
       dispatch({ type: "ERROR" })
     }
+  }
+
+  // Add product to cart
+  const addProductToCart = (product) => {
+    dispatch({ type: "ADD_PRODUCT", payload: product })
   }
 
   // Set Loading
@@ -68,6 +70,7 @@ const EbuyState = (props) => {
         error: state.error,
         setInput,
         searchProduct,
+        addProductToCart,
       }}
     >
       {props.children}

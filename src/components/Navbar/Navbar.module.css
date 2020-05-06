@@ -1,26 +1,21 @@
 nav {
-   border-bottom: 1px solid var(--dark-grey);
+  border-bottom: 1px solid var(--dark-grey);
 }
 
 ul {
-   display: flex;
+  display: flex;
 }
 
 li {
-   padding: 20px;
+  padding: 20px;
 }
 
 .navbarContainer {
-   display: flex;
-   justify-content: space-between;
-   padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
 }
 
 .cartContainer {
-   display: flex;
-}
-
-.price {
-   margin: auto;
-   margin-left: 5px;
+  display: flex;
 }

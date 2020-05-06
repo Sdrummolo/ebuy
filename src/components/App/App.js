@@ -3,10 +3,10 @@ import Header from "../Header/Header"
 import Navbar from "../Navbar/Navbar"
 import Products from "../Products/Products"
 import DotLoader from "react-spinners/DotLoader"
+import NoResults from "../NoResults/NoResults"
 
 import styles from "./App.module.css"
 import EbuyContext from "../../context/ebuyContext"
-import NoResults from "../NoResults/NoResults"
 
 function App() {
   const { results, isLoading, error } = useContext(EbuyContext)

@@ -10,7 +10,7 @@ const Products = ({ results }) => {
   return (
     <section className={styles.products}>
       {results.map((product) => (
-        <SingleProduct key={uuid()} data={product} />
+        <SingleProduct data={product} key={product.itemId[0]} />
       ))}
     </section>
   )

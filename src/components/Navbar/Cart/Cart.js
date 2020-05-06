@@ -1,21 +1,25 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useContext } from "react"
+import EbuyContext from "../../../context/ebuyContext"
+import PropTypes from "prop-types"
 
-import styles from './Cart.module.css'
+import styles from "./Cart.module.css"
 
 const Cart = () => {
-   return (
+  const { cart } = useContext(EbuyContext)
+
+  return (
+    <>
       <div className={styles.cart}>
-         <i class="fas fa-shopping-cart fa-2x"></i>
-         <div className={styles.quantity}>
-            <p>0</p>
-         </div>
+        <i class="fas fa-shopping-cart fa-2x"></i>
+        <div className={styles.quantity}>
+          <p>{cart.length}</p>
+        </div>
       </div>
-   )
+      <h4 className={styles.price}>$0.00</h4>
+    </>
+  )
 }
 
-Cart.propTypes = {
-
-}
+Cart.propTypes = {}
 
 export default Cart

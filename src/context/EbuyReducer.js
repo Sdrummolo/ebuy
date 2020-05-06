@@ -25,6 +25,11 @@ export default (state, action) => {
         isLoading: false,
         results: [],
       }
+    case "ADD_PRODUCT":
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      }
     default:
       return state
   }

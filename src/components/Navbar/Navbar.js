@@ -28,7 +28,6 @@ const Navbar = () => {
           </ul>
           <div className={styles.cartContainer}>
             <Cart />
-            <h4 className={styles.price}>$0.00</h4>
           </div>
         </div>
       </div>
