@@ -11,7 +11,9 @@ const EbuyState = (props) => {
   const initialState = {
     cart: [],
     results: [],
+    input: "",
     isLoading: false,
+    error: { showError: false, text: "" },
   }
 
   const [state, dispatch] = useReducer(EbuyReducer, initialState)
@@ -33,24 +35,38 @@ const EbuyState = (props) => {
       )
       const response = await request.json()
 
-      dispatch({
-        type: "LOAD_PRODUCTS",
-        payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
-      })
+      if (
+        response.findItemsByKeywordsResponse[0].searchResult[0]["@count"] ===
+        "0"
+      ) {
+        dispatch({ type: "ERROR" })
+      } else {
+        dispatch({
+          type: "LOAD_PRODUCTS",
+          payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
+        })
+      }
     } catch (err) {
       console.log(err)
+      dispatch({ type: "ERROR" })
     }
   }
 
   // Set Loading
   const setLoading = () => dispatch({ type: "SET_LOADING" })
 
+  // Input handler
+  const setInput = (input) => dispatch({ type: "SET_INPUT", payload: input })
+
   return (
     <EbuyContext.Provider
       value={{
         cart: state.cart,
         results: state.results,
+        input: state.input,
         isLoading: state.isLoading,
+        error: state.error,
+        setInput,
         searchProduct,
       }}
     >
