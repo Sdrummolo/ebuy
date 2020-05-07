@@ -25,12 +25,12 @@ function App() {
             <DotLoader loading={isLoading} css={{ margin: "50px auto 50px auto" }} color={"#111"} />
           </>
         ) : null}
-        {!isLoading && results.length && (
+        {!isLoading && results.length ? (
           <>
             <Products results={results} />
             <LoadMore />
           </>
-        )}
+        ) : null}
 
         {error.showError && <NoResults error={error.text} />}
       </div>
