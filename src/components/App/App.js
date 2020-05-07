@@ -1,40 +1,26 @@
 import React, { useContext } from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Header from "../Header/Header"
 import Navbar from "../Navbar/Navbar"
-import Products from "../Products/Products"
-import DotLoader from "react-spinners/DotLoader"
-import LoadMore from "../LoadMore/LoadMore"
-import NoResults from "../NoResults/NoResults"
-
-import EbuyContext from "../../context/ebuyContext"
+import Home from "../Home/Home"
+import CartPage from "../CartPage/CartPage"
+import NotFound from "../NotFound/NotFound"
 
 function App() {
-  const { results, isLoading, error, showedProducts } = useContext(EbuyContext)
-
   return (
-    <div className="App">
-      <Header />
-      <Navbar />
-      <div className="container">
-        {isLoading && showedProducts === 10 ? (
-          <DotLoader loading={isLoading} css={{ margin: "200px auto auto auto" }} color={"#111"} />
-        ) : null}
-        {isLoading && showedProducts > 10 ? (
-          <>
-            <Products results={results} />
-            <DotLoader loading={isLoading} css={{ margin: "50px auto 50px auto" }} color={"#111"} />
-          </>
-        ) : null}
-        {!isLoading && results.length ? (
-          <>
-            <Products results={results} />
-            <LoadMore />
-          </>
-        ) : null}
-
-        {error.showError && <NoResults error={error.text} />}
+    <Router>
+      <div className="App">
+        <Header />
+        <Navbar />
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/cart" component={CartPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   )
 }
 

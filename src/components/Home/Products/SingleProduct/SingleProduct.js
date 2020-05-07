@@ -2,19 +2,19 @@ import React, { useContext } from "react"
 import PropTypes from "prop-types"
 
 import styles from "./SingleProduct.module.css"
-import ebuyContext from "../../../context/ebuyContext"
+import ebuyContext from "../../../../context/ebuyContext"
 
 const Product = ({ data }) => {
   const { addProductToCart, removeProductFromCart } = useContext(ebuyContext)
   const title = data.title[0]
   const image = data.galleryURL[0]
-  const price = `€ ${Number(
-    data.sellingStatus[0].convertedCurrentPrice[0]["__value__"]
-  ).toFixed(2)}`
+  const price = `€ ${Number(data.sellingStatus[0].convertedCurrentPrice[0]["__value__"]).toFixed(
+    2
+  )}`
   const id = data.itemId[0]
   const { isInCart } = data
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     isInCart ? removeProductFromCart(id) : addProductToCart(id)
   }
 
@@ -28,11 +28,7 @@ const Product = ({ data }) => {
         <h3 className={styles.price}>{price}</h3>
       </div>
       {isInCart ? (
-        <button
-          className={styles.addButton}
-          onClick={handleClick}
-          style={{ background: "red" }}
-        >
+        <button className={styles.addButton} onClick={handleClick} style={{ background: "red" }}>
           Remove item
         </button>
       ) : (

@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import EbuyContext from "../../context/ebuyContext"
+import EbuyContext from "../../../context/ebuyContext"
 
 import styles from "./LoadMore.module.css"
 

@@ -6,6 +6,10 @@ import styles from "./Cart.module.css"
 const Cart = () => {
   const { cart } = useContext(EbuyContext)
 
+  const totPrice = cart.reduce((a, b) => {
+    return a + Number(b.sellingStatus[0].currentPrice[0]["__value__"])
+  }, 0)
+
   return (
     <>
       <div className={styles.cart}>
@@ -14,7 +18,7 @@ const Cart = () => {
           <p>{cart.length}</p>
         </div>
       </div>
-      <h4 className={styles.price}>$0.00</h4>
+      <h4 className={styles.price}>$ {totPrice.toFixed(2)}</h4>
     </>
   )
 }

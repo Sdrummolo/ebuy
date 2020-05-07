@@ -3,14 +3,14 @@ import React, { useContext } from "react"
 import EbuyContext from "../../../context/ebuyContext"
 import styles from "./Search.module.css"
 
-const Search = (props) => {
+const Search = props => {
   const { searchProduct, input, setInput } = useContext(EbuyContext)
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setInput(e.target.value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault()
     searchProduct(input)
   }

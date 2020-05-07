@@ -34,11 +34,11 @@ export default (state, action) => {
       return {
         ...state,
         cart: state.cart.concat(
-          state.results.filter((product) => {
+          state.results.filter(product => {
             return product.itemId[0] === action.payload
           })
         ),
-        results: state.results.map((product) => {
+        results: state.results.map(product => {
           if (product.itemId[0] === action.payload) {
             product.isInCart = true
             return product
@@ -48,10 +48,10 @@ export default (state, action) => {
     case "REMOVE_PRODUCT":
       return {
         ...state,
-        cart: state.cart.filter((product) => {
+        cart: state.cart.filter(product => {
           return product.itemId[0] !== action.payload
         }),
-        results: state.results.map((product) => {
+        results: state.results.map(product => {
           if (product.itemId[0] === action.payload) {
             product.isInCart = false
             return product
