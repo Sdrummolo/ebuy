@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import SingleProduct from "./SingleProduct/SingleProduct"
 import PropTypes from "prop-types"
 
@@ -7,7 +7,7 @@ import styles from "./Products.module.css"
 const Products = ({ results }) => {
   return (
     <section className={styles.products}>
-      {results.map((product) => (
+      {results.map(product => (
         <SingleProduct data={product} key={product.itemId[0]} />
       ))}
     </section>

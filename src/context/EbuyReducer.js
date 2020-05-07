@@ -18,6 +18,11 @@ export default (state, action) => {
         isLoading: false,
         error: { showError: false, text: "" },
       }
+    case "INCREMENT_SHOWED_RESULTS":
+      return {
+        state,
+        resultsNumber: state.resultsNumber + 10,
+      }
     case "ERROR":
       return {
         ...state,

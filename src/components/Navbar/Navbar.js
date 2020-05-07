@@ -1,6 +1,5 @@
 import React from "react"
 import Cart from "./Cart/Cart"
-import PropTypes from "prop-types"
 
 import styles from "./Navbar.module.css"
 
@@ -34,7 +33,5 @@ const Navbar = () => {
     </nav>
   )
 }
-
-Navbar.propTypes = {}
 
 export default Navbar

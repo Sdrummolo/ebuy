@@ -1,6 +1,5 @@
 import React, { useContext } from "react"
 import EbuyContext from "../../../context/ebuyContext"
-import PropTypes from "prop-types"
 
 import styles from "./Cart.module.css"
 
@@ -19,7 +18,5 @@ const Cart = () => {
     </>
   )
 }
-
-Cart.propTypes = {}
 
 export default Cart

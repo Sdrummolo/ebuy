@@ -1,0 +1,10 @@
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.loadMore > button {
+  padding: 10px 20px;
+  background: var(--main);
+}
