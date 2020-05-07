@@ -26,9 +26,10 @@ const EbuyState = props => {
 
     if (product === undefined) {
       const amountToLoad = showedProducts + 10
+      setShowedProducts(showedProducts + 10)
 
       try {
-        const request = await fetch(`${lastRequest}${String(amountToLoad)}`)
+        const request = await fetch(lastRequest + String(amountToLoad))
         const response = await request.json()
 
         if (response.findItemsByKeywordsResponse[0].searchResult[0]["@count"] === "0") {
@@ -39,35 +40,32 @@ const EbuyState = props => {
           type: "LOAD_PRODUCTS",
           payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
         })
-        setShowedProducts(showedProducts + 10)
       } catch (err) {
         console.log(err)
         dispatch({ type: "ERROR" })
       }
-    }
+    } else {
+      // format input correctly
+      const formattedInput = product.replace(/\s+/g, " ").trim().split(" ").join("%20")
+      setShowedProducts(10)
 
-    // format input correctly
-    const formattedInput = product.replace(/\s+/g, " ").trim().split(" ").join("%20")
-    setShowedProducts(10)
+      try {
+        const request = await fetch(`${BASEURL}${formattedInput}&paginationInput.entriesPerPage=10`)
+        const response = await request.json()
 
-    try {
-      const request = await fetch(
-        `${BASEURL}${formattedInput}&paginationInput.entriesPerPage=${String(showedProducts)}`
-      )
-      const response = await request.json()
+        if (response.findItemsByKeywordsResponse[0].searchResult[0]["@count"] === "0") {
+          return dispatch({ type: "ERROR" })
+        }
 
-      if (response.findItemsByKeywordsResponse[0].searchResult[0]["@count"] === "0") {
-        return dispatch({ type: "ERROR" })
+        setLastRequest(request.url.slice(0, request.url.length - 2))
+        dispatch({
+          type: "LOAD_PRODUCTS",
+          payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
+        })
+      } catch (err) {
+        console.log(err)
+        dispatch({ type: "ERROR" })
       }
-
-      setLastRequest(request.url.slice(0, request.url.length - 2))
-      dispatch({
-        type: "LOAD_PRODUCTS",
-        payload: response.findItemsByKeywordsResponse[0].searchResult[0].item,
-      })
-    } catch (err) {
-      console.log(err)
-      dispatch({ type: "ERROR" })
     }
   }
 
@@ -95,6 +93,7 @@ const EbuyState = props => {
         input: state.input,
         isLoading: state.isLoading,
         error: state.error,
+        showedProducts,
         setInput,
         searchProduct,
         addProductToCart,

@@ -9,17 +9,30 @@ import NoResults from "../NoResults/NoResults"
 import EbuyContext from "../../context/ebuyContext"
 
 function App() {
-  const { results, isLoading, error } = useContext(EbuyContext)
+  const { results, isLoading, error, showedProducts } = useContext(EbuyContext)
 
   return (
     <div className="App">
       <Header />
       <Navbar />
       <div className="container">
-        {results.length ? <Products results={results} /> : null}
+        {isLoading && showedProducts === 10 ? (
+          <DotLoader loading={isLoading} css={{ margin: "200px auto auto auto" }} color={"#111"} />
+        ) : null}
+        {isLoading && showedProducts > 10 ? (
+          <>
+            <Products results={results} />
+            <DotLoader loading={isLoading} css={{ margin: "50px auto 50px auto" }} color={"#111"} />
+          </>
+        ) : null}
+        {!isLoading && results.length && (
+          <>
+            <Products results={results} />
+            <LoadMore />
+          </>
+        )}
+
         {error.showError && <NoResults error={error.text} />}
-        {results.length && !isLoading ? <LoadMore /> : null}
-        <DotLoader loading={isLoading} css={{ margin: "50px auto 50px auto" }} color={"#111"} />
       </div>
     </div>
   )
