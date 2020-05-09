@@ -60,6 +60,7 @@ const EbuyState = props => {
       try {
         const request = await fetch(`${BASEURL}${formattedInput}&paginationInput.entriesPerPage=10`)
         const response = await request.json()
+        console.log(response)
 
         if (response.findItemsByKeywordsResponse[0].searchResult[0]["@count"] === "0") {
           return dispatch({ type: "ERROR" })
@@ -78,13 +79,13 @@ const EbuyState = props => {
   }
 
   // Add product to cart
-  const addProductToCart = product => {
-    dispatch({ type: "ADD_PRODUCT", payload: product })
+  const addProductToCart = id => {
+    dispatch({ type: "ADD_PRODUCT", payload: id })
   }
 
   // Remove product from cart
-  const removeProductFromCart = product => {
-    dispatch({ type: "REMOVE_PRODUCT", payload: product })
+  const removeProductFromCart = id => {
+    dispatch({ type: "REMOVE_PRODUCT", payload: id })
   }
 
   // change quantity of a product in cart

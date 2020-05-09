@@ -30,11 +30,11 @@ export default (state, action) => {
         ...state,
         cart: state.cart.concat(
           state.results.filter(product => {
-            return product.itemId[0] === action.payload
+            return product.id === action.payload
           })
         ),
         results: state.results.map(product => {
-          if (product.itemId[0] === action.payload) {
+          if (product.id === action.payload) {
             product.quantity = 1
             return product
           } else return product
@@ -44,10 +44,10 @@ export default (state, action) => {
       return {
         ...state,
         cart: state.cart.filter(product => {
-          return product.itemId[0] !== action.payload
+          return product.id !== action.payload
         }),
         results: state.results.map(product => {
-          if (product.itemId[0] === action.payload) {
+          if (product.id === action.payload) {
             product.quantity = 0
             return product
           } else return product
@@ -57,7 +57,7 @@ export default (state, action) => {
       return {
         ...state,
         cart: state.cart.map(product => {
-          if (product.itemId[0] === action.payload.product) {
+          if (product.id === action.payload.product) {
             product.quantity = action.payload.quantity
             return product
           } else return product

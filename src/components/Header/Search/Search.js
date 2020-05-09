@@ -1,9 +1,10 @@
 import React, { useContext } from "react"
 import { useHistory } from "react-router-dom"
+
 import EbuyContext from "../../../context/ebuyContext"
 import styles from "./Search.module.css"
 
-const Search = props => {
+const Search = () => {
   const { searchProduct, input, setInput } = useContext(EbuyContext)
   const history = useHistory()
 

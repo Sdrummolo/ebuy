@@ -6,13 +6,18 @@ import ebuyContext from "../../../../context/ebuyContext"
 
 const Product = ({ data }) => {
   const { addProductToCart, removeProductFromCart } = useContext(ebuyContext)
+  const { quantity, id } = data
   const title = data.title[0]
-  const image = data.galleryURL[0]
+  let image
+  try {
+    image = data.galleryURL[0]
+  } catch (e) {
+    console.log(e)
+    image = null
+  }
   const price = `€ ${Number(data.sellingStatus[0].convertedCurrentPrice[0]["__value__"]).toFixed(
     2
   )}`
-  const id = data.itemId[0]
-  const { quantity } = data
 
   const handleClick = e => {
     quantity ? removeProductFromCart(id) : addProductToCart(id)
@@ -20,9 +25,7 @@ const Product = ({ data }) => {
 
   return (
     <div className={styles.singleProduct}>
-      <div className={styles.img}>
-        <img src={image} alt={title} />
-      </div>
+      <div className={styles.img}>{image ? <img src={image} alt={title} /> : null}</div>
       <div className={styles.content}>
         <h4 className={styles.title}>{title}</h4>
         <h3 className={styles.price}>{price}</h3>

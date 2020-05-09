@@ -15,11 +15,11 @@ const CartItem = ({ product }) => {
   }
 
   const handleDelete = e => {
-    removeProductFromCart(product.itemId[0])
+    removeProductFromCart(product.id)
   }
 
   useEffect(() => {
-    changeQuantity(product.itemId[0], value)
+    changeQuantity(product.id, value)
   }, [value])
 
   return (

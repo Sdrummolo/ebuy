@@ -7,7 +7,7 @@ import styles from "./CartPage.module.css"
 const CartPage = () => {
   const { cart, totItems, totPrice } = useContext(EbuyContext)
 
-  const products = cart.map(product => <CartItem product={product} key={product.itemId[0]} />)
+  const products = cart.map(product => <CartItem product={product} key={product.id} />)
 
   return (
     <div className={styles.cartPage}>
