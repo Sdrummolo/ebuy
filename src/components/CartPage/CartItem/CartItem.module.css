@@ -1,0 +1,59 @@
+.item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--dark-grey);
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 10px;
+}
+
+.image {
+  min-width: 150px;
+}
+
+.description > img {
+  max-height: 100px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.infos > h4 {
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+.infos > small {
+  margin-bottom: 5px;
+}
+
+.manage {
+  margin-top: 10px;
+}
+
+.manage > select {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.manage > small {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.manage > small:hover {
+  text-decoration: underline;
+}
+
+.price {
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 600;
+  color: #b12704;
+}
+
+.euro,
+.cents {
+  font-size: 12px;
+}

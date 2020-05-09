@@ -19,6 +19,14 @@ const EbuyState = props => {
 
   const [state, dispatch] = useReducer(EbuyReducer, initialState)
 
+  const totPrice = state.cart.reduce((a, b) => {
+    return a + b.quantity * Number(b.sellingStatus[0].currentPrice[0]["__value__"])
+  }, 0)
+
+  const totItems = state.cart.reduce((a, b) => {
+    return a + b.quantity
+  }, 0)
+
   // Load products
   const searchProduct = async product => {
     const BASEURL = `https://cors-anywhere.herokuapp.com/https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=${VERSION}&SECURITY-APPNAME=${SECURITY_APPNAME}&RESPONSE-DATA-FORMAT=json&REST-PAYLOAD&keywords=`
@@ -79,10 +87,15 @@ const EbuyState = props => {
     dispatch({ type: "REMOVE_PRODUCT", payload: product })
   }
 
+  // change quantity of a product in cart
+  const changeQuantity = (product, quantity) => {
+    dispatch({ type: "CHANGE_QUANTITY", payload: { product, quantity } })
+  }
+
   // Set Loading
   const setLoading = () => dispatch({ type: "SET_LOADING" })
 
-  // Input handler
+  // Search bar nput handler
   const setInput = input => dispatch({ type: "SET_INPUT", payload: input })
 
   return (
@@ -93,11 +106,14 @@ const EbuyState = props => {
         input: state.input,
         isLoading: state.isLoading,
         error: state.error,
+        totPrice,
+        totItems,
         showedProducts,
         setInput,
         searchProduct,
         addProductToCart,
         removeProductFromCart,
+        changeQuantity,
       }}
     >
       {props.children}

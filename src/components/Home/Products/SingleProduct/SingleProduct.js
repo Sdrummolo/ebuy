@@ -12,10 +12,10 @@ const Product = ({ data }) => {
     2
   )}`
   const id = data.itemId[0]
-  const { isInCart } = data
+  const { quantity } = data
 
   const handleClick = e => {
-    isInCart ? removeProductFromCart(id) : addProductToCart(id)
+    quantity ? removeProductFromCart(id) : addProductToCart(id)
   }
 
   return (
@@ -27,7 +27,7 @@ const Product = ({ data }) => {
         <h4 className={styles.title}>{title}</h4>
         <h3 className={styles.price}>{price}</h3>
       </div>
-      {isInCart ? (
+      {quantity ? (
         <button className={styles.addButton} onClick={handleClick} style={{ background: "red" }}>
           Remove item
         </button>

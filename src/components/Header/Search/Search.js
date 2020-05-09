@@ -1,10 +1,11 @@
 import React, { useContext } from "react"
-
+import { useHistory } from "react-router-dom"
 import EbuyContext from "../../../context/ebuyContext"
 import styles from "./Search.module.css"
 
 const Search = props => {
   const { searchProduct, input, setInput } = useContext(EbuyContext)
+  const history = useHistory()
 
   const handleChange = e => {
     setInput(e.target.value)
@@ -13,6 +14,7 @@ const Search = props => {
   const handleSubmit = e => {
     e.preventDefault()
     searchProduct(input)
+    history.push("/")
   }
 
   return (

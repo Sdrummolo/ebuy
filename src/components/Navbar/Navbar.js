@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import Cart from "./Cart/Cart"
 
 import styles from "./Navbar.module.css"
@@ -10,24 +11,14 @@ const Navbar = () => {
         <div className={styles.navbarContainer}>
           <ul>
             <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Shop</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
+              <Link to="/">Home</Link>
             </li>
           </ul>
-          <div className={styles.cartContainer}>
-            <Cart />
-          </div>
+          <Link to="/cart">
+            <div className={styles.cartContainer}>
+              <Cart />
+            </div>
+          </Link>
         </div>
       </div>
     </nav>

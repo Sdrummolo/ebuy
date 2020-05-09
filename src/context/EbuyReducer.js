@@ -18,11 +18,6 @@ export default (state, action) => {
         isLoading: false,
         error: { showError: false, text: "" },
       }
-    case "INCREMENT_SHOWED_RESULTS":
-      return {
-        state,
-        resultsNumber: state.resultsNumber + 10,
-      }
     case "ERROR":
       return {
         ...state,
@@ -40,7 +35,7 @@ export default (state, action) => {
         ),
         results: state.results.map(product => {
           if (product.itemId[0] === action.payload) {
-            product.isInCart = true
+            product.quantity = 1
             return product
           } else return product
         }),
@@ -53,7 +48,17 @@ export default (state, action) => {
         }),
         results: state.results.map(product => {
           if (product.itemId[0] === action.payload) {
-            product.isInCart = false
+            product.quantity = 0
+            return product
+          } else return product
+        }),
+      }
+    case "CHANGE_QUANTITY":
+      return {
+        ...state,
+        cart: state.cart.map(product => {
+          if (product.itemId[0] === action.payload.product) {
+            product.quantity = action.payload.quantity
             return product
           } else return product
         }),

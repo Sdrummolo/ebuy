@@ -1,0 +1,43 @@
+.cartPage {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--dark-grey);
+}
+
+.cartPage > h3 {
+  font-weight: 900;
+}
+
+.products {
+  margin-top: 10px;
+}
+
+.checkout {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.checkout > button {
+  margin-top: 20px;
+  padding: 10px;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.emptyCart {
+  text-align: center;
+  margin-top: 100px;
+}
