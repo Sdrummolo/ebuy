@@ -4,12 +4,11 @@
   --light-grey: #f4f4f4;
   --dark-grey: #e1e1e1;
   --blue: #0062bd;
-  --red: #f30f30;
+  --red: #d1243e;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 * {

@@ -1,0 +1,10 @@
+.sortContainer {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid var(--dark-grey);
+}
+
+.sortContainer > small {
+  margin-left: auto;
+}

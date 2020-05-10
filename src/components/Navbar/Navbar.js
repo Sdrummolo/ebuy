@@ -6,14 +6,12 @@ import styles from "./Navbar.module.css"
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <div className="container">
         <div className={styles.navbarContainer}>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
+          <Link to="/">
+            <i className="fas fa-home fa-2x"></i>
+          </Link>
           <Link to="/cart">
             <div className={styles.cartContainer}>
               <Cart />

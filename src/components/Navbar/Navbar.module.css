@@ -1,19 +1,20 @@
-nav {
-  border-bottom: 1px solid var(--dark-grey);
-}
-
-ul {
-  display: flex;
-}
-
-li {
-  padding: 20px;
+.navbar {
+  justify-self: end;
 }
 
 .navbarContainer {
   display: flex;
-  justify-content: space-between;
-  padding: 5px 15px;
+  align-items: center;
+  padding: 15px;
+  transition: color 0.2s;
+}
+
+.navbarContainer i {
+  transition: color 0.2s;
+}
+
+.navbarContainer i:hover {
+  color: #000;
 }
 
 .cartContainer {

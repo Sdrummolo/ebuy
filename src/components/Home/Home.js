@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import DotLoader from "react-spinners/DotLoader"
 import Products from "./Products/Products"
-import LoadMore from "./LoadMore/LoadMore"
 import NoResults from "./NoResults/NoResults"
 
 import EbuyContext from "../../context/ebuyContext"
@@ -17,13 +16,12 @@ const Home = () => {
       {isLoading && showedProducts > 10 ? (
         <>
           <Products results={results} />
-          <DotLoader loading={isLoading} css={{ margin: "50px auto 50px auto" }} color={"#111"} />
+          <DotLoader loading={isLoading} css={{ margin: "auto" }} color={"#111"} />
         </>
       ) : null}
       {!isLoading && results.length ? (
         <>
           <Products results={results} />
-          <LoadMore />
         </>
       ) : null}
       {error.showError && <NoResults error={error.text} />}

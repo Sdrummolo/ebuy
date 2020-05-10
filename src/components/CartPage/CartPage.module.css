@@ -24,7 +24,7 @@
   align-items: flex-end;
 }
 
-.checkout > button {
+.checkout button {
   margin-top: 20px;
   padding: 10px;
   background: var(--secondary);

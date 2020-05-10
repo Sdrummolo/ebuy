@@ -25,14 +25,14 @@ const CartItem = ({ product }) => {
   return (
     <div className={styles.item}>
       <div className={styles.image}>
-        <img src={galleryURL[0]} alt={title[0]} />
+        <img src={galleryURL} alt={title} />
       </div>
 
       <div className={styles.description}>
         <div className={styles.infos}>
-          <h4 className={styles.title}>{title[0]}</h4>
-          <small>Sent from: {location[0]}</small>
-          <small>Condition: {condition[0]["conditionDisplayName"][0]}</small>
+          <h4 className={styles.title}>{title}</h4>
+          <small>Sent from: {location}</small>
+          <small>Condition: {condition[0]["conditionDisplayName"]}</small>
         </div>
 
         <div className={styles.manage}>

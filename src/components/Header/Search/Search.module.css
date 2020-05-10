@@ -21,6 +21,11 @@
   outline: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.searchBar > button:hover {
+  background: #000;
 }
 
 .searchBar > button > i {

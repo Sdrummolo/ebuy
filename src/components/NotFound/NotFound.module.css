@@ -1,0 +1,9 @@
+.notFound {
+  max-width: 700px;
+  padding: 20px;
+  margin: 100px auto 0 auto;
+}
+
+.notFound > h1 {
+  font-size: 50px;
+}
