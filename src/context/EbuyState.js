@@ -2,12 +2,14 @@ import React, { useReducer, useState } from "react"
 import EbuyReducer from "./EbuyReducer"
 import EbuyContext from "./ebuyContext"
 
+require("dotenv").config()
+
 const VERSION = "1.13.0"
-const SECURITY_APPNAME = "LuigiDiP-allbuy-PRD-bc545f399-176ef3d6"
+const SECURITY_APPNAME = process.env.REACT_APP_API_KEY
 
 const EbuyState = props => {
   const [lastRequest, setLastRequest] = useState("")
-  const [showedProducts, setShowedProducts] = useState(10)
+  const [showedProducts, setShowedProducts] = useState(0)
 
   const initialState = {
     cart: [],

@@ -17,12 +17,12 @@ const Products = ({ results }) => {
           const id = uuid()
           product.id = id
           return (
-            <>
-              <SingleProduct data={product} key={id} />
+            <React.Fragment key={id}>
+              <SingleProduct data={product} />
               {id === results[results.length - 1].id ? (
-                <Waypoint onEnter={setTimeout(() => searchProduct, 1000)} />
+                <Waypoint onEnter={() => searchProduct()} />
               ) : null}
-            </>
+            </React.Fragment>
           )
         })}
       </section>

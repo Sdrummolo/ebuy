@@ -10,6 +10,9 @@ const Home = () => {
 
   return (
     <>
+      {!isLoading && showedProducts === 0 ? (
+        <h3 style={{ marginTop: 100, textAlign: "center" }}>Powered by EBay</h3>
+      ) : null}
       {isLoading && showedProducts === 10 ? (
         <DotLoader loading={isLoading} css={{ margin: "200px auto auto auto" }} color={"#111"} />
       ) : null}
