@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       {!isLoading && showedProducts === 0 ? (
-        <h3 style={{ marginTop: 100, textAlign: "center" }}>Powered by EBay</h3>
+        <h3 style={{ marginTop: 100, textAlign: "center" }}>Powered by Ebay Finding API</h3>
       ) : null}
       {isLoading && showedProducts === 10 ? (
         <DotLoader loading={isLoading} css={{ margin: "200px auto auto auto" }} color={"#111"} />
@@ -19,7 +19,7 @@ const Home = () => {
       {isLoading && showedProducts > 10 ? (
         <>
           <Products results={results} />
-          <DotLoader loading={isLoading} css={{ margin: "auto" }} color={"#111"} />
+          <DotLoader loading={isLoading} css={{ margin: "auto auto 40px auto" }} color={"#111"} />
         </>
       ) : null}
       {!isLoading && results.length ? (
