@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ebuy/static/css/main.0c2efd07.chunk.css",
-    "main.js": "/ebuy/static/js/main.15b85915.chunk.js",
-    "main.js.map": "/ebuy/static/js/main.15b85915.chunk.js.map",
+    "main.js": "/ebuy/static/js/main.2a4356b6.chunk.js",
+    "main.js.map": "/ebuy/static/js/main.2a4356b6.chunk.js.map",
     "runtime-main.js": "/ebuy/static/js/runtime-main.40bec528.js",
     "runtime-main.js.map": "/ebuy/static/js/runtime-main.40bec528.js.map",
     "static/js/2.85e0ef13.chunk.js": "/ebuy/static/js/2.85e0ef13.chunk.js",
     "static/js/2.85e0ef13.chunk.js.map": "/ebuy/static/js/2.85e0ef13.chunk.js.map",
     "index.html": "/ebuy/index.html",
-    "precache-manifest.ee4297cfd899063d9f0c5a19ed394ba4.js": "/ebuy/precache-manifest.ee4297cfd899063d9f0c5a19ed394ba4.js",
+    "precache-manifest.e0257efdfbbf7767b754d6b3660829bb.js": "/ebuy/precache-manifest.e0257efdfbbf7767b754d6b3660829bb.js",
     "service-worker.js": "/ebuy/service-worker.js",
     "static/css/main.0c2efd07.chunk.css.map": "/ebuy/static/css/main.0c2efd07.chunk.css.map",
     "static/js/2.85e0ef13.chunk.js.LICENSE.txt": "/ebuy/static/js/2.85e0ef13.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.40bec528.js",
     "static/js/2.85e0ef13.chunk.js",
     "static/css/main.0c2efd07.chunk.css",
-    "static/js/main.15b85915.chunk.js"
+    "static/js/main.2a4356b6.chunk.js"
   ]
 }

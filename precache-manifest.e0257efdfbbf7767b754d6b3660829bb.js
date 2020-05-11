@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "96c16a8d10b40bac73442d89b3298f21",
+    "revision": "b8e8e7ea1c978827e118721cf095ed16",
     "url": "/ebuy/index.html"
   },
   {
-    "revision": "24f111b4f448533b00c7",
+    "revision": "29e0fe5e6128d8321fd1",
     "url": "/ebuy/static/css/main.0c2efd07.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ebuy/static/js/2.85e0ef13.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "24f111b4f448533b00c7",
-    "url": "/ebuy/static/js/main.15b85915.chunk.js"
+    "revision": "29e0fe5e6128d8321fd1",
+    "url": "/ebuy/static/js/main.2a4356b6.chunk.js"
   },
   {
     "revision": "9afdedc4b9ca41fe34e0",
