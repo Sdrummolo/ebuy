@@ -1,17 +1,22 @@
 .singleProduct {
   margin: 20px auto;
-  position: relative;
   display: flex;
   border: 1px solid rgb(212, 212, 212);
   padding: 10px;
   border-radius: 3px;
 }
 
-.img > img {
+.img img {
   width: 150px;
   border: 1px solid rgb(212, 212, 212);
   padding: 1px;
   margin-right: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .title {
@@ -24,10 +29,10 @@
 }
 
 .button {
-  position: absolute;
   width: 135px;
-  bottom: 10px;
-  right: 15px;
+  height: 37px;
+  margin-top: auto;
+  margin-left: auto;
   padding: 10px;
   border: none;
   background: var(--red);

@@ -29,16 +29,16 @@ const Product = ({ data }) => {
       <div className={styles.content}>
         <h4 className={styles.title}>{title}</h4>
         <h3 className={styles.price}>{price}</h3>
+        {quantity ? (
+          <button className={styles.button} onClick={handleClick}>
+            Remove item
+          </button>
+        ) : (
+          <button className={styles.button} style={{ background: "#45ba5b" }} onClick={handleClick}>
+            Add item to cart
+          </button>
+        )}
       </div>
-      {quantity ? (
-        <button className={styles.button} onClick={handleClick}>
-          Remove item
-        </button>
-      ) : (
-        <button className={styles.button} style={{ background: "#45ba5b" }} onClick={handleClick}>
-          Add item to cart
-        </button>
-      )}
     </div>
   )
 }

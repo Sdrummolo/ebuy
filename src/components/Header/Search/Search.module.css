@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-.searchBar > input {
+.searchBar input {
   width: 90%;
   height: 30px;
   padding: 7px;
@@ -24,10 +24,17 @@
   transition: background 0.2s;
 }
 
-.searchBar > button:hover {
+.searchBar button:hover {
   background: #000;
 }
 
-.searchBar > button > i {
+.searchBar button > i {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .searchBar {
+    width: 90%;
+    margin-top: 20px;
+  }
 }
