@@ -9,11 +9,6 @@ import EbuyContext from "../../../context/ebuyContext"
 const Products = ({ results }) => {
   const { searchProduct } = useContext(EbuyContext)
 
-  const handler = () => {
-    console.log("triggered")
-    searchProduct()
-  }
-
   return (
     <section className={styles.products}>
       {results.map((product, i) => {
@@ -22,7 +17,7 @@ const Products = ({ results }) => {
         return (
           <React.Fragment key={i}>
             <SingleProduct data={product} />
-            {id === results[results.length - 1].id && <Waypoint onEnter={handler} />}
+            {id === results[results.length - 1].id && <Waypoint onEnter={() => searchProduct()} />}
           </React.Fragment>
         )
       })}
