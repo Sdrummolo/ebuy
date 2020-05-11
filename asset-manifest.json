@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/ebuy/static/css/main.0c2efd07.chunk.css",
-    "main.js": "/ebuy/static/js/main.2970ef8a.chunk.js",
-    "main.js.map": "/ebuy/static/js/main.2970ef8a.chunk.js.map",
+    "main.js": "/ebuy/static/js/main.0a5f0a4b.chunk.js",
+    "main.js.map": "/ebuy/static/js/main.0a5f0a4b.chunk.js.map",
     "runtime-main.js": "/ebuy/static/js/runtime-main.40bec528.js",
     "runtime-main.js.map": "/ebuy/static/js/runtime-main.40bec528.js.map",
-    "static/js/2.ee0575af.chunk.js": "/ebuy/static/js/2.ee0575af.chunk.js",
-    "static/js/2.ee0575af.chunk.js.map": "/ebuy/static/js/2.ee0575af.chunk.js.map",
+    "static/js/2.85e0ef13.chunk.js": "/ebuy/static/js/2.85e0ef13.chunk.js",
+    "static/js/2.85e0ef13.chunk.js.map": "/ebuy/static/js/2.85e0ef13.chunk.js.map",
     "index.html": "/ebuy/index.html",
-    "precache-manifest.3c0ca6c413a0dbb4f030ebcba5f6682b.js": "/ebuy/precache-manifest.3c0ca6c413a0dbb4f030ebcba5f6682b.js",
+    "precache-manifest.1b40b959b04b980461e324ac05bd5c51.js": "/ebuy/precache-manifest.1b40b959b04b980461e324ac05bd5c51.js",
     "service-worker.js": "/ebuy/service-worker.js",
     "static/css/main.0c2efd07.chunk.css.map": "/ebuy/static/css/main.0c2efd07.chunk.css.map",
-    "static/js/2.ee0575af.chunk.js.LICENSE.txt": "/ebuy/static/js/2.ee0575af.chunk.js.LICENSE.txt"
+    "static/js/2.85e0ef13.chunk.js.LICENSE.txt": "/ebuy/static/js/2.85e0ef13.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.40bec528.js",
-    "static/js/2.ee0575af.chunk.js",
+    "static/js/2.85e0ef13.chunk.js",
     "static/css/main.0c2efd07.chunk.css",
-    "static/js/main.2970ef8a.chunk.js"
+    "static/js/main.0a5f0a4b.chunk.js"
   ]
 }
