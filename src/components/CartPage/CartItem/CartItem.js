@@ -7,6 +7,7 @@ import ebuyContext from "../../../context/ebuyContext"
 const CartItem = ({ product }) => {
   const { changeQuantity, removeProductFromCart } = useContext(ebuyContext)
   const [value, setValue] = useState(product.quantity)
+
   const { galleryURL, title, location, condition, sellingStatus } = product
   const price = (sellingStatus[0].currentPrice[0]["__value__"] * value).toFixed(2)
 
@@ -32,7 +33,7 @@ const CartItem = ({ product }) => {
         <div className={styles.infos}>
           <h4 className={styles.title}>{title}</h4>
           <small>Sent from: {location}</small>
-          <small>Condition: {condition[0]["conditionDisplayName"]}</small>
+          {condition ? <small>Condition: {condition["conditionDisplayName"]}</small> : null}
         </div>
 
         <div className={styles.manage}>

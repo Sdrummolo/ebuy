@@ -23,9 +23,13 @@
   margin-top: 5px;
 }
 
+.condition {
+  margin: 10px 0;
+}
+
 .price {
   color: var(--blue);
-  margin: 10px;
+  margin: 10px 0;
 }
 
 .button {

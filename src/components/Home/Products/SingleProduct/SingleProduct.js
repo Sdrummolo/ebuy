@@ -6,7 +6,7 @@ import ebuyContext from "../../../../context/ebuyContext"
 
 const Product = ({ data }) => {
   const { addProductToCart, removeProductFromCart } = useContext(ebuyContext)
-  const { quantity, id } = data
+  const { quantity, id, condition } = data
   const title = data.title[0]
   let image
   try {
@@ -23,11 +23,18 @@ const Product = ({ data }) => {
     quantity ? removeProductFromCart(id) : addProductToCart(id)
   }
 
+  console.log(condition)
+
   return (
     <div className={styles.singleProduct}>
       <div className={styles.img}>{image ? <img src={image} alt={title} /> : null}</div>
       <div className={styles.content}>
         <h4 className={styles.title}>{title}</h4>
+        {condition ? (
+          <small className={styles.condition}>
+            Condition: {condition[0]["conditionDisplayName"]}
+          </small>
+        ) : null}
         <h3 className={styles.price}>{price}</h3>
         {quantity ? (
           <button className={styles.button} onClick={handleClick}>
