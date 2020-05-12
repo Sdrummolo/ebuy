@@ -97,7 +97,7 @@ const EbuyState = props => {
   // Set Loading
   const setLoading = () => dispatch({ type: "SET_LOADING" })
 
-  // Search bar nput handler
+  // Search bar input handler
   const setInput = input => dispatch({ type: "SET_INPUT", payload: input })
 
   return (
